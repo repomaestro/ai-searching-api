@@ -1,0 +1,17 @@
+This Java API provides user to solve standard search problems by just 
+defining the problem independent of methods used to solve it, by defining:
+- The initial state.
+- The objective function(s).
+- The goal state.
+- Optional set of heuristics.
+
+One uses classes provided by this API to define the search problem as above, 
+and use the algorithms supplied to solve the search problem.
+
+This API tries to make the problem definition as verbose as possible, in an
+attempt to give the user as freedom as possible, so that many search problems
+can be defined and solved by just using this API.
+
+More information regarding the use of this API is present in JavaDoc of the
+main package 'com.github.repomaestro.searching', and classes provided by this
+package. 
