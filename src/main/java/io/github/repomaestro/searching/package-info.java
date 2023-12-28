@@ -171,4 +171,4 @@
  * 
  * @see TreeEngine
  */
-package com.github.repomaestro.searching;
+package io.github.repomaestro.searching;

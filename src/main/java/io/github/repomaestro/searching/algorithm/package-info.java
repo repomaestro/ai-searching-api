@@ -9,4 +9,4 @@
  * to use that method for solving the problem.
  * </p>
  */
-package com.github.repomaestro.searching.algorithm;
+package io.github.repomaestro.searching.algorithm;
