@@ -160,7 +160,10 @@ public class TreeEngine<T extends State> {
      */
     public List<Node<T>> pathTo(Predicate<T> evaluator, Algorithm A, int maxDepth, ToIntFunction<T>... heuristics) {
         if (!(A instanceof SearchAlgorithm || A instanceof HeuristicAlgorithm))
-            throw new IllegalArgumentException(String.format("Algorithm \"%s\" is not applicable", A));
+            throw new IllegalArgumentException(String.format("Algorithm \"%s\" is not supported.", A));
+        
+        if (heuristics.length > 1)
+            throw new IllegalArgumentException("Number of heuristic functions (objects) that are passed cannot be larger than one!");
         
         if (A == SearchAlgorithm.IDS) {
             int depth = 1;
@@ -172,9 +175,6 @@ public class TreeEngine<T extends State> {
             
             return path;
         }
-        
-        if (heuristics.length > 1)
-            throw new IllegalArgumentException("Number of heuristic functions (objects) that are passed cannot be larger than one!");
         
         //Initialize the heuristic function to be either none (if heuristics array is of zero-length) and first element if it is non zero-length (one as checked...).
         ToIntFunction<T> heuristic = (heuristics.length == 1 ? heuristics[0] : n -> 0);

@@ -42,11 +42,18 @@
  * (such as dimensions of a 2D problem).<br> 
  * If the state contains data types which are object references (e.g array), then you can also
  * implement {@code Object.equals} and {@code Object.hashCode}, but this is not a necessity.<br>
+ * 
+ * <p>
  * <i>
- * Note: If the defined class does not override {@code Object.equals} and {@code Object.hashCode}, then
+ * <b>Notes:</b><br> 
+ * - If the defined class does not override {@code Object.equals} and {@code Object.hashCode}, then
  * default implementations defined in {@code State} class are used, which should work for any general 
- * sub-class but a little less performant than a custom implementation.
+ * sub-class but a little less performant than a custom implementation.<br>
+ * - Defined class which represents the state MUST have instance fields that are {@code Serializable}. This
+ * should not be much of a concern however, as classes to be used typically as an attribute of a state
+ * (those which are supplied by Java Runtime) are marked as being {@code Serializable} by Java Runtime.
  * </i>
+ * </p>
  * </li>
  * 
  * <li>
